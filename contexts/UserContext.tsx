@@ -1,10 +1,10 @@
-
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 
 interface User {
   name: string;
   email: string;
   avatar?: string;
+  isLocked?: boolean;
 }
 
 interface UserContextType {
@@ -27,6 +27,14 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         const storedUser = window.localStorage.getItem('user');
         if (storedUser) {
           setUser(JSON.parse(storedUser));
+        } else {
+          // Default user per request
+          const defaultUser = {
+            name: 'Dolmat Bin Samsudin',
+            email: 'myrahyusri@gmail.com',
+            isLocked: true
+          };
+          setUser(defaultUser);
         }
       } catch (error) {
         console.error('Failed to read user from localStorage', error);

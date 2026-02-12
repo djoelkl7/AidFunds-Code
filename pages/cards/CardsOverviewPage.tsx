@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../../components/AnimatedSection';
+import { useUser } from '../../contexts/UserContext';
 
 const CardItem: React.FC<{ type: string; number: string; expiry: string; holder: string; color: string; isFrozen?: boolean; id: string }> = ({ type, number, expiry, holder, color, isFrozen, id }) => (
     <div className={`relative rounded-xl shadow-2xl overflow-hidden p-6 text-white h-56 flex flex-col justify-between transform transition-all hover:scale-105 duration-300 ${color} ${isFrozen ? 'opacity-75 grayscale' : ''}`}>
@@ -24,7 +24,7 @@ const CardItem: React.FC<{ type: string; number: string; expiry: string; holder:
         <div className="flex justify-between items-end">
             <div>
                 <p className="text-xs opacity-75 uppercase">Card Holder</p>
-                <p className="font-medium tracking-wide">{holder}</p>
+                <p className="font-medium tracking-wide uppercase">{holder}</p>
             </div>
             <div>
                  <p className="text-xs opacity-75 uppercase">Expires</p>
@@ -36,9 +36,12 @@ const CardItem: React.FC<{ type: string; number: string; expiry: string; holder:
 );
 
 const CardsOverviewPage: React.FC = () => {
+    const { user } = useUser();
+    const holderName = user?.name || 'Dolmat Bin Samsudin';
+
     const cards = [
-        { id: '1', type: 'Platinum Debit', number: '**** **** **** 4582', expiry: '12/26', holder: 'JOHN DOE', color: 'bg-gradient-to-br from-gray-800 to-black', isFrozen: false },
-        { id: '2', type: 'Rewards Credit', number: '**** **** **** 9921', expiry: '09/25', holder: 'JOHN DOE', color: 'bg-gradient-to-br from-primary-red to-red-900', isFrozen: true },
+        { id: '1', type: 'Platinum Debit', number: '**** **** **** 4582', expiry: '12/26', holder: holderName, color: 'bg-gradient-to-br from-gray-800 to-black', isFrozen: false },
+        { id: '2', type: 'Rewards Credit', number: '**** **** **** 9921', expiry: '09/25', holder: holderName, color: 'bg-gradient-to-br from-primary-red to-red-900', isFrozen: true },
     ];
 
     return (

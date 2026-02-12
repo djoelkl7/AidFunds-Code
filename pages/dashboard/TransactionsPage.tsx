@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import AnimatedSection from '../../components/AnimatedSection';
 
@@ -8,18 +7,15 @@ interface Transaction {
   description: string;
   category: string;
   amount: number;
-  status: 'Completed' | 'Pending';
+  status: 'Completed' | 'Pending' | 'Flagged';
 }
 
 const mockTransactions: Transaction[] = [
-    { id: 'T001', date: '2024-07-22', description: 'Starbucks Coffee', category: 'Food & Drink', amount: -5.40, status: 'Completed' },
-    { id: 'T002', date: '2024-07-21', description: 'Salary Deposit', category: 'Income', amount: 3200.00, status: 'Completed' },
-    { id: 'T003', date: '2024-07-20', description: 'Amazon Purchase', category: 'Shopping', amount: -45.99, status: 'Completed' },
-    { id: 'T004', date: '2024-07-19', description: 'Uber Ride', category: 'Transport', amount: -18.50, status: 'Completed' },
-    { id: 'T005', date: '2024-07-18', description: 'Electric Bill', category: 'Utilities', amount: -120.00, status: 'Completed' },
-    { id: 'T006', date: '2024-07-18', description: 'Transfer to Savings', category: 'Transfer', amount: -500.00, status: 'Completed' },
-    { id: 'T007', date: '2024-07-17', description: 'Grocery Store', category: 'Groceries', amount: -156.32, status: 'Completed' },
-    { id: 'T008', date: '2024-07-16', description: 'Netflix Subscription', category: 'Entertainment', amount: -15.99, status: 'Pending' },
+    { id: 'TXN-GLD-001', date: '2024-07-22', description: 'Gold Payment Settlement', category: 'Gold Assets', amount: 4200000.00, status: 'Completed' },
+    { id: 'T002', date: '2024-07-21', description: 'Verification Maintenance Fee', category: 'Banking', amount: -250.00, status: 'Completed' },
+    { id: 'TXN-WRE-882', date: '2024-07-21', description: 'International Wire Credit', category: 'Income', amount: 850000.00, status: 'Completed' },
+    { id: 'T004', date: '2024-07-20', description: 'Security Audit Hold', category: 'Compliance', amount: 0.00, status: 'Flagged' },
+    { id: 'T005', date: '2024-07-18', description: 'Account Initialization', category: 'Transfer', amount: 1000.00, status: 'Completed' },
 ];
 
 const TransactionsPage: React.FC = () => {
@@ -36,28 +32,27 @@ const TransactionsPage: React.FC = () => {
 
     return (
         <AnimatedSection>
-            <div className="bg-white dark:bg-primary-gray rounded-lg shadow-md p-6">
+            <div className="bg-primary-gray rounded-lg shadow-xl p-6 border border-gray-800">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-                    <h1 className="text-2xl font-bold text-light-text dark:text-white">Transaction History</h1>
+                    <h1 className="text-2xl font-bold text-white">Audit & Transaction Log</h1>
                     <div className="flex gap-4 w-full md:w-auto">
                          <input 
                             type="text" 
-                            placeholder="Search transactions..." 
+                            placeholder="Search descriptions..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full md:w-64 bg-gray-100 dark:bg-black/30 border border-gray-300 dark:border-gray-600 rounded-md p-2 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full md:w-64 bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
                          />
                          <select 
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
-                            className="bg-gray-100 dark:bg-black/30 border border-gray-300 dark:border-gray-600 rounded-md p-2 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
                          >
                              <option value="All">All Categories</option>
-                             <option value="Food & Drink">Food & Drink</option>
+                             <option value="Gold Assets">Gold Assets</option>
                              <option value="Income">Income</option>
-                             <option value="Shopping">Shopping</option>
-                             <option value="Utilities">Utilities</option>
-                             <option value="Transfer">Transfer</option>
+                             <option value="Banking">Banking</option>
+                             <option value="Compliance">Compliance</option>
                          </select>
                     </div>
                 </div>
@@ -65,43 +60,40 @@ const TransactionsPage: React.FC = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-gray-200 dark:border-gray-700">
-                                <th className="p-4 text-light-text-secondary dark:text-gray-400 font-medium">Date</th>
-                                <th className="p-4 text-light-text-secondary dark:text-gray-400 font-medium">Description</th>
-                                <th className="p-4 text-light-text-secondary dark:text-gray-400 font-medium">Category</th>
-                                <th className="p-4 text-light-text-secondary dark:text-gray-400 font-medium">Status</th>
-                                <th className="p-4 text-light-text-secondary dark:text-gray-400 font-medium text-right">Amount</th>
+                            <tr className="border-b border-gray-800">
+                                <th className="p-4 text-gray-400 font-bold uppercase text-[10px] tracking-widest">Reference ID</th>
+                                <th className="p-4 text-gray-400 font-bold uppercase text-[10px] tracking-widest">Description</th>
+                                <th className="p-4 text-gray-400 font-bold uppercase text-[10px] tracking-widest">Category</th>
+                                <th className="p-4 text-gray-400 font-bold uppercase text-[10px] tracking-widest">Status</th>
+                                <th className="p-4 text-gray-400 font-bold uppercase text-[10px] tracking-widest text-right">Credit/Debit</th>
                             </tr>
                         </thead>
                         <tbody>
                             {filteredTransactions.map(t => (
-                                <tr key={t.id} className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                                    <td className="p-4 text-light-text dark:text-white">{t.date}</td>
-                                    <td className="p-4 font-semibold text-light-text dark:text-white">{t.description}</td>
+                                <tr key={t.id} className="border-b border-gray-900 hover:bg-black/20 transition-colors">
+                                    <td className="p-4 text-gray-500 font-mono text-xs">{t.id}</td>
+                                    <td className="p-4 font-semibold text-white">{t.description}</td>
                                     <td className="p-4">
-                                        <span className="bg-gray-100 dark:bg-gray-700 text-light-text-secondary dark:text-gray-300 px-2 py-1 rounded text-xs">
+                                        <span className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-[10px] font-bold uppercase">
                                             {t.category}
                                         </span>
                                     </td>
                                     <td className="p-4">
-                                        <span className={`px-2 py-1 rounded text-xs font-bold ${
-                                            t.status === 'Completed' ? 'text-green-600 bg-green-100 dark:bg-green-900/30' : 'text-yellow-600 bg-yellow-100 dark:bg-yellow-900/30'
+                                        <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase ${
+                                            t.status === 'Completed' ? 'text-green-500 bg-green-900/20' : 
+                                            t.status === 'Flagged' ? 'text-red-500 bg-red-900/20 animate-pulse' :
+                                            'text-yellow-500 bg-yellow-900/20'
                                         }`}>
                                             {t.status}
                                         </span>
                                     </td>
-                                    <td className={`p-4 text-right font-bold ${t.amount > 0 ? 'text-green-500' : 'text-light-text dark:text-white'}`}>
-                                        {t.amount > 0 ? '+' : ''}{t.amount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+                                    <td className={`p-4 text-right font-bold font-mono ${t.amount > 0 ? 'text-green-500' : t.amount < 0 ? 'text-red-500' : 'text-gray-400'}`}>
+                                        {t.amount === 0 ? '--' : (t.amount > 0 ? '+' : '') + t.amount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                    {filteredTransactions.length === 0 && (
-                        <div className="p-8 text-center text-light-text-secondary dark:text-gray-500">
-                            No transactions found.
-                        </div>
-                    )}
                 </div>
             </div>
         </AnimatedSection>

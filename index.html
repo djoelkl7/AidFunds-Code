@@ -7,15 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <title>AidFunds - Secure & Smart Investment Platform</title>
-    <meta name="description" content="AidFunds provides secure, smart, and accessible investment solutions. Grow your wealth with expert financial advice, diverse investment plans, and cutting-edge technology." />
-    <meta name="keywords" content="finance, investment, wealth management, secure trading, financial advisor, stock market, asset management, AidFunds, investing, retirement planning" />
-    <meta name="author" content="AidFunds" />
-
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="AidFunds - Secure & Smart Investment Platform" />
-    <meta property="og:description" content="Experience seamless, secure, and smart investing with AidFunds. Empower your financial journey with expert insights and innovative technology." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="AidFunds" />
+    <meta name="description" content="AidFunds provides secure, smart, and accessible investment solutions. Grow your wealth with expert financial advice." />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,13 +16,13 @@
         theme: {
           extend: {
             colors: {
-              'primary-red': '#E50914',
-              'primary-dark': '#141414',
-              'primary-gray': '#333333',
+              'primary-red': '#D61F26',
+              'primary-dark': '#0A0A0A',
+              'primary-gray': '#1A1A1A',
               'light-bg': '#FFFFFF',
-              'light-bg-secondary': '#F9FAFB', // gray-50
-              'light-text': '#111827', // gray-900
-              'light-text-secondary': '#6B7281', // gray-500
+              'light-bg-secondary': '#F9FAFB',
+              'light-text': '#111827',
+              'light-text-secondary': '#4B5563',
             }
           }
         }
@@ -40,32 +32,37 @@
       html {
         scroll-behavior: smooth;
       }
-      /* Added for prose styles for AI response */
-      .prose {
-        color: #111827;
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
       }
-      .dark .prose-invert {
-        color: #d1d5db;
+      .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
       }
-      .prose h1, .prose h2, .prose h3, .prose h4, .prose th {
-        color: inherit;
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-       .prose a {
-        color: #E50914;
+      .dashboard-card {
+        background: #1A1A1A;
+        border: 1px solid #333;
+        transition: all 0.2s ease-in-out;
       }
-       .prose strong {
-         color: inherit;
-       }
-       .prose ul > li::before {
-         background-color: #E50914;
-       }
-       .animate-fade-in {
-         animation: fadeIn 0.5s ease-in-out;
-       }
-       @keyframes fadeIn {
-         from { opacity: 0; transform: translateY(10px); }
-         to { opacity: 1; transform: translateY(0); }
-       }
+      .dashboard-card:hover {
+        border-color: #D61F26;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0A0A0A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D61F26;
+      }
     </style>
   <script type="importmap">
 {
@@ -79,7 +76,7 @@
 }
 </script>
 </head>
-  <body class="bg-light-bg dark:bg-primary-dark">
+  <body class="bg-primary-dark text-white">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
