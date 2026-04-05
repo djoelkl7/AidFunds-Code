@@ -15,6 +15,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SignUpPage from './pages/SignUpPage';
 import PageTransition from './components/PageTransition';
+import ScrollToTop from './components/ScrollToTop';
 
 // Dashboard Components
 import DashboardLayout from './components/DashboardLayout';
@@ -52,6 +53,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       <UserProvider>
         <div className="bg-light-bg dark:bg-black text-light-text dark:text-white font-sans">
+          <ScrollToTop />
           <Header />
           <Routes>
             <Route 

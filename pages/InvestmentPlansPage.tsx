@@ -253,7 +253,7 @@ const InvestmentPlansPage: React.FC = () => {
       setSelectedPlan(plan);
       setIsModalOpen(true);
     } else {
-      navigate('/login', { state: { from: '/investment-plans', planName: plan.name } });
+      navigate('/signup', { state: { from: '/investment-plans', planName: plan.name } });
     }
   };
 

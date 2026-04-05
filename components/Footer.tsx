@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="mb-2">
                 <AnimatedSection delay={250}>
-                  <a href="/#services" className="hover:text-primary-red transition-colors duration-300">Services</a>
+                  <Link to="/#services" className="hover:text-primary-red transition-colors duration-300">Services</Link>
                 </AnimatedSection>
               </li>
               <li className="mb-2">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <AnimatedSection delay={350}>
-                  <a href="/#faq" className="hover:text-primary-red transition-colors duration-300">FAQ</a>
+                  <Link to="/#faq" className="hover:text-primary-red transition-colors duration-300">FAQ</Link>
                 </AnimatedSection>
               </li>
             </ul>

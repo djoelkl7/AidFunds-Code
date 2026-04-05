@@ -4,10 +4,15 @@ import AnimatedSection from '../../components/AnimatedSection';
 import { useUser } from '../../contexts/UserContext';
 
 const CardItem: React.FC<{ type: string; number: string; expiry: string; holder: string; color: string; isFrozen?: boolean; id: string }> = ({ type, number, expiry, holder, color, isFrozen, id }) => (
-    <div className={`relative rounded-xl shadow-2xl overflow-hidden p-6 text-white h-56 flex flex-col justify-between transform transition-all hover:scale-105 duration-300 ${color} ${isFrozen ? 'opacity-75 grayscale' : ''}`}>
+    <div className={`relative rounded-xl shadow-2xl overflow-hidden p-6 text-white h-56 flex flex-col justify-between transform transition-all hover:scale-105 duration-300 ${color} ${isFrozen ? 'opacity-80 grayscale-[0.5]' : ''}`}>
         {isFrozen && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10">
-                <span className="bg-white text-black px-4 py-2 rounded-full font-bold uppercase text-sm tracking-wider">Frozen</span>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[1px] z-10">
+                <div className="bg-white/90 text-black px-4 py-2 rounded-full font-bold uppercase text-xs tracking-widest flex items-center shadow-2xl border border-white/20">
+                    <svg className="w-4 h-4 mr-2 text-primary-red" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                    Frozen
+                </div>
             </div>
         )}
         <div className="flex justify-between items-start">
