@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">Frequently Asked Questions</h2>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="max-w-3xl mx-auto">

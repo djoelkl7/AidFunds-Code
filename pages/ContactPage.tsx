@@ -26,7 +26,7 @@ const ContactHero: React.FC = () => (
 const ContactInfoCard: React.FC<{ icon: React.ReactElement; title: string; details: string[]; delay?: number }> = ({ icon, title, details, delay = 0 }) => (
     <AnimatedSection delay={delay}>
         <div className="bg-light-bg-secondary dark:bg-primary-gray p-8 rounded-lg shadow-lg text-center h-full hover:shadow-xl transition-shadow duration-300">
-            <div className="text-primary-red mb-6 flex justify-center">
+            <div className="text-primary-purple mb-6 flex justify-center">
                 {React.cloneElement(icon, { className: "w-10 h-10" })}
             </div>
             <h3 className="text-xl font-bold mb-4 text-light-text dark:text-white">{title}</h3>
@@ -102,7 +102,7 @@ const ContactForm: React.FC = () => {
                                 value={values.name}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.name && touched.name ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-300`}
+                                className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.name && touched.name ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-300`}
                             />
                             {errors.name && touched.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                         </div>
@@ -115,7 +115,7 @@ const ContactForm: React.FC = () => {
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.email && touched.email ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-300`}
+                                className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.email && touched.email ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-300`}
                             />
                             {errors.email && touched.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                         </div>
@@ -129,7 +129,7 @@ const ContactForm: React.FC = () => {
                             value={values.subject}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.subject && touched.subject ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-300`}
+                            className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.subject && touched.subject ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-300`}
                         />
                         {errors.subject && touched.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
                     </div>
@@ -142,14 +142,14 @@ const ContactForm: React.FC = () => {
                             value={values.message}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.message && touched.message ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-300`}
+                            className={`w-full bg-gray-50 dark:bg-black/20 border ${errors.message && touched.message ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'} rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-300`}
                         ></textarea>
                         {errors.message && touched.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                     </div>
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-primary-red text-white font-bold px-8 py-3 rounded-lg text-lg hover:bg-red-700 disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
+                        className="w-full bg-primary-purple text-white font-bold px-8 py-3 rounded-lg text-lg hover:bg-primary-purple-dark disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
                     >
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
@@ -176,7 +176,7 @@ const ContactPage: React.FC = () => {
                 delay={150}
                 icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
                 title="Email Us"
-                details={['support@aidfunds.online', 'info@aidfunds.online', 'careers@aidfunds.online']}
+                details={['support@cashlio.finance', 'info@cashlio.finance', 'careers@cashlio.finance']}
             />
             <ContactInfoCard 
                 delay={300}
@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
                 <AnimatedSection delay={450}>
                     <div className="mb-8">
                         <h2 className="text-3xl font-bold text-light-text dark:text-white mb-4">We'd Love to Hear From You</h2>
-                        <div className="w-24 h-1 bg-primary-red mb-6"></div>
+                        <div className="w-24 h-1 bg-primary-purple mb-6"></div>
                         <p className="text-light-text-secondary dark:text-gray-400 text-lg leading-relaxed">
                             Whether you have a question about our investment plans, need assistance with your account, or just want to share your feedback, our dedicated team is ready to assist you.
                         </p>

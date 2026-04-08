@@ -19,7 +19,7 @@ const LoanDetailsPage: React.FC = () => {
             <div className="space-y-6">
                  <div className="flex items-center justify-between mb-4">
                      <div className="flex items-center space-x-4">
-                        <button onClick={() => navigate('/dashboard/loans')} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-red">
+                        <button onClick={() => navigate('/dashboard/loans')} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-purple">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                         </button>
                         <h1 className="text-2xl font-bold text-light-text dark:text-white">Loan Details</h1>
@@ -33,7 +33,7 @@ const LoanDetailsPage: React.FC = () => {
                         <p className="text-sm text-light-text-secondary dark:text-gray-400">Total Principal</p>
                         <p className="text-2xl font-bold text-light-text dark:text-white">$10,000.00</p>
                     </div>
-                    <div className="bg-white dark:bg-primary-gray p-6 rounded-lg shadow-md border-t-4 border-primary-red">
+                    <div className="bg-white dark:bg-primary-gray p-6 rounded-lg shadow-md border-t-4 border-primary-purple">
                         <p className="text-sm text-light-text-secondary dark:text-gray-400">Remaining Balance</p>
                         <p className="text-2xl font-bold text-light-text dark:text-white">$8,250.00</p>
                     </div>
@@ -96,7 +96,7 @@ const LoanDetailsPage: React.FC = () => {
                             </div>
                          </div>
                          
-                         <button className="w-full bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+                         <button className="w-full bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors">
                              Make One-Time Payment
                          </button>
                     </div>

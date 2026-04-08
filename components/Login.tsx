@@ -64,9 +64,9 @@ const Login: React.FC = () => {
       trackEvent('login_attempt', 'auth', 'email_password');
       // Simulate API call for login
       setTimeout(() => {
-        // Mock validation: only allow sarah@aidfunds.online with any password for demo
+        // Mock validation: only allow sarah@cashlio.finance with any password for demo
         // or any email with 'password123'
-        if (formValues.email === 'sarah@aidfunds.online' || formValues.password === 'password123') {
+        if (formValues.email === 'sarah@cashlio.finance' || formValues.password === 'password123') {
           trackEvent('login_success', 'auth', 'email_password');
           login({ email: formValues.email, name: 'Sarah Johnson' });
           setIsSubmitting(false);
@@ -102,7 +102,7 @@ const Login: React.FC = () => {
   return (
     <section className="min-h-screen bg-light-bg dark:bg-primary-dark flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-         <Link to="/" className="inline-block" aria-label="AidFunds homepage">
+         <Link to="/" className="inline-block" aria-label="Cashlio Finance homepage">
           <Logo />
         </Link>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-light-text dark:text-white">
@@ -133,7 +133,7 @@ const Login: React.FC = () => {
               )}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium sr-only">Email Address</label>
-                <input
+                  <input
                   id="email"
                   name="email"
                   type="email"
@@ -142,7 +142,7 @@ const Login: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Email Address"
-                  className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+                  className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
                   aria-invalid={!!(errors.email && touched.email)}
                   aria-describedby="email-error"
                   required
@@ -162,7 +162,7 @@ const Login: React.FC = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder="Password"
-                    className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.password && touched.password ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.password && touched.password ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+                    className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.password && touched.password ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.password && touched.password ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
                     aria-invalid={!!(errors.password && touched.password)}
                     aria-describedby="password-error"
                     required
@@ -176,7 +176,7 @@ const Login: React.FC = () => {
 
               <div className="flex items-center justify-end">
                 <div className="text-sm">
-                  <Link to="/forgot-password" className="font-medium text-primary-red hover:text-red-700 dark:hover:text-red-400 transition-colors duration-200">
+                  <Link to="/forgot-password" className="font-medium text-primary-purple hover:text-primary-purple-dark dark:hover:text-primary-purple transition-colors duration-200">
                     Forgot your password?
                   </Link>
                 </div>
@@ -186,7 +186,7 @@ const Login: React.FC = () => {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-red-500 disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
+                    className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-purple hover:bg-primary-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-purple-dark disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
                 >
                     {isSubmitting ? (
                         <>
@@ -223,7 +223,7 @@ const Login: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleGoogleLogin}
-                      className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-primary-dark text-sm font-medium text-light-text-secondary dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-red transition-colors duration-200"
+                      className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-primary-dark text-sm font-medium text-light-text-secondary dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-purple transition-colors duration-200"
                       aria-label="Sign in with Google"
                     >
                       <svg className="w-5 h-5 mr-3" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 381.5 512 244 512 111.8 512 0 399.5 0 261.8S111.8 11.6 244 11.6c67.8 0 120.3 28.1 159.9 65.8L354.4 134c-31-29.4-71.4-49.4-110.4-49.4-96.6 0-174.9 83.3-174.9 176.9s78.3 176.9 174.9 176.9c100.3 0 144.3-72.1 148.8-109.1H244v-66.2h238.4c4.8 26.1 7.6 54.4 7.6 84.1z"></path></svg>
@@ -235,7 +235,7 @@ const Login: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleFacebookLogin}
-                      className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-primary-dark text-sm font-medium text-light-text-secondary dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-red transition-colors duration-200"
+                      className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-primary-dark text-sm font-medium text-light-text-secondary dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-purple transition-colors duration-200"
                       aria-label="Sign in with Facebook"
                     >
                       <svg className="w-5 h-5 mr-3" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
@@ -247,7 +247,7 @@ const Login: React.FC = () => {
               <div className="mt-6 text-center">
                 <p className="text-sm text-light-text-secondary dark:text-gray-400">
                     Don't have an account?{' '}
-                    <Link to="/signup" className="font-medium text-primary-red hover:text-red-700 dark:hover:text-red-400 transition-colors duration-200">
+                    <Link to="/signup" className="font-medium text-primary-purple hover:text-primary-purple-dark dark:hover:text-primary-purple transition-colors duration-200">
                         Sign up
                     </Link>
                 </p>

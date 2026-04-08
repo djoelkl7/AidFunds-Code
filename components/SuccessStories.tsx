@@ -20,19 +20,19 @@ const StoryCard: React.FC<{
       <h3 className="text-2xl font-bold text-light-text dark:text-white mb-4">{title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         <div>
-           <span className="text-xs font-bold uppercase tracking-wider text-primary-red block mb-1">The Goal</span>
+           <span className="text-xs font-bold uppercase tracking-wider text-primary-purple block mb-1">The Goal</span>
            <p className="text-light-text-secondary dark:text-gray-300 text-sm leading-relaxed">{goal}</p>
         </div>
         <div>
-           <span className="text-xs font-bold uppercase tracking-wider text-primary-red block mb-1">The Strategy</span>
+           <span className="text-xs font-bold uppercase tracking-wider text-primary-purple block mb-1">The Strategy</span>
            <p className="text-light-text-secondary dark:text-gray-300 text-sm leading-relaxed">{strategy}</p>
         </div>
       </div>
       <div className="mb-6">
-           <span className="text-xs font-bold uppercase tracking-wider text-primary-red block mb-1">The Result</span>
+           <span className="text-xs font-bold uppercase tracking-wider text-primary-purple block mb-1">The Result</span>
            <p className="text-light-text font-bold dark:text-white text-lg">{result}</p>
       </div>
-      <blockquote className="border-l-4 border-primary-red pl-4 italic text-light-text-secondary dark:text-gray-400 mb-2">
+      <blockquote className="border-l-4 border-primary-purple pl-4 italic text-light-text-secondary dark:text-gray-400 mb-2">
         "{quote}"
       </blockquote>
       <div className="text-right font-semibold text-light-text dark:text-white text-sm">
@@ -50,7 +50,7 @@ const SuccessStories: React.FC = () => {
             goal: "Accumulate enough capital to launch a sustainable coffee brand within 3 years.",
             strategy: "Invested in the 'Aggressive Alpha' plan with consistent monthly top-ups.",
             result: "Generated 18% ROI over 3 years, exceeding the funding target by 15%.",
-            quote: "AidFunds didn't just grow my money; they accelerated my dreams. The growth was consistent, and I felt secure knowing experts were handling the market volatility.",
+            quote: "Cashlio Finance didn't just grow my money; they accelerated my dreams. The growth was consistent, and I felt secure knowing experts were handling the market volatility.",
             name: "David K., Entrepreneur"
         },
         {
@@ -59,7 +59,7 @@ const SuccessStories: React.FC = () => {
             goal: "Build a robust retirement fund to maintain a comfortable lifestyle post-work.",
             strategy: "Utilized the 'Starter Growth' plan for steady, long-term appreciation and dividend reinvestment.",
             result: "Achieved a stable 7% annual yield, compounding significantly over 5 years.",
-            quote: "I was worried about inflation eating my savings. AidFunds provided the stability and predictable growth I needed to retire without financial anxiety.",
+            quote: "I was worried about inflation eating my savings. Cashlio Finance provided the stability and predictable growth I needed to retire without financial anxiety.",
             name: "Margaret T., Retired Teacher"
         }
     ];
@@ -70,8 +70,8 @@ const SuccessStories: React.FC = () => {
                 <AnimatedSection>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">Real Stories, Real Growth</h2>
-                        <p className="text-light-text-secondary dark:text-gray-400 mt-2">See how our clients are achieving their financial ambitions with AidFunds.</p>
-                        <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+                        <p className="text-light-text-secondary dark:text-gray-400 mt-2">See how our clients are achieving their financial ambitions with Cashlio Finance.</p>
+                        <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
                     </div>
                 </AnimatedSection>
                 <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">

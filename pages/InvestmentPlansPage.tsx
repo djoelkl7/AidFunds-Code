@@ -28,7 +28,7 @@ const AIFinancialAdvisor: React.FC = () => {
 
             const result = await ai.models.generateContent({
                 model: model,
-                contents: `As an expert financial advisor for a company called AidFunds, answer the following user query about investment plans and financial strategies. The user is on a page displaying three investment plans: 'Starter Growth' (low risk), 'Dynamic Momentum' (medium risk), and 'Aggressive Alpha' (high risk). Provide a helpful, insightful, and well-structured response using Markdown for formatting (e.g., headings, bold text, lists). User query: "${query}"`,
+                contents: `As an expert financial advisor for a company called Cashlio Finance, answer the following user query about investment plans and financial strategies. The user is on a page displaying three investment plans: 'Starter Growth' (low risk), 'Dynamic Momentum' (medium risk), and 'Aggressive Alpha' (high risk). Provide a helpful, insightful, and well-structured response using Markdown for formatting (e.g., headings, bold text, lists). User query: "${query}"`,
                 config: config,
             });
 
@@ -59,7 +59,7 @@ const AIFinancialAdvisor: React.FC = () => {
                                 checked={useThinkingMode}
                                 onChange={() => setUseThinkingMode(!useThinkingMode)}
                             />
-                            <div className={`block ${useThinkingMode ? 'bg-primary-red' : 'bg-gray-300 dark:bg-gray-600'} w-14 h-8 rounded-full transition-colors duration-300`}></div>
+                            <div className={`block ${useThinkingMode ? 'bg-primary-purple' : 'bg-gray-300 dark:bg-gray-600'} w-14 h-8 rounded-full transition-colors duration-300`}></div>
                             <div className={`dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform duration-300 ${useThinkingMode ? 'translate-x-6' : ''}`}></div>
                         </div>
                         <span className="ml-3 text-sm font-medium text-light-text-secondary dark:text-gray-300">Deep Analysis (slower)</span>
@@ -72,14 +72,14 @@ const AIFinancialAdvisor: React.FC = () => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="e.g., 'I am 30 with $10k to invest, which plan is best for me?'"
-                        className="flex-grow bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-300"
+                        className="flex-grow bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-300"
                         disabled={isLoading}
                         aria-label="Ask a financial question"
                     />
                     <button
                         type="submit"
                         disabled={isLoading || !query.trim()}
-                        className="bg-primary-red text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed disabled:scale-100 flex items-center justify-center"
+                        className="bg-primary-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-primary-purple-dark transition duration-300 transform hover:scale-105 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed disabled:scale-100 flex items-center justify-center"
                     >
                         {isLoading ? (
                             <>
@@ -166,7 +166,7 @@ const ConfirmationModal: React.FC<{
       <div className="bg-light-bg-secondary dark:bg-primary-gray rounded-lg shadow-xl p-6 sm:p-8 w-full max-w-md mx-4 transform transition-all duration-300 ease-out" role="document">
         <h2 id="modal-title" className="text-2xl font-bold text-light-text dark:text-white mb-4">Confirm Your Selection</h2>
         <p className="text-light-text-secondary dark:text-gray-300 mb-6">
-          Are you sure you want to select the <span className="font-bold text-primary-red">{planName}</span> plan?
+          Are you sure you want to select the <span className="font-bold text-primary-purple">{planName}</span> plan?
         </p>
         <div className="flex justify-end space-x-4">
           <button
@@ -178,7 +178,7 @@ const ConfirmationModal: React.FC<{
           </button>
           <button
             onClick={onConfirm}
-            className="px-6 py-2 rounded-md text-white font-semibold bg-primary-red hover:bg-red-700 transition-colors duration-300 transform hover:scale-105"
+            className="px-6 py-2 rounded-md text-white font-semibold bg-primary-purple hover:bg-primary-purple-dark transition-colors duration-300 transform hover:scale-105"
             aria-label={`Confirm selection of ${planName} plan`}
           >
             Confirm
@@ -201,7 +201,7 @@ const PlanCard: React.FC<{ plan: InvestmentPlan; index: number; onSelectPlan: (p
     
     return (
         <AnimatedSection delay={150 + (index * 150)}>
-            <div className="bg-light-bg-secondary dark:bg-primary-gray p-8 rounded-lg shadow-lg hover:shadow-2xl h-full flex flex-col transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-primary-red">
+            <div className="bg-light-bg-secondary dark:bg-primary-gray p-8 rounded-lg shadow-lg hover:shadow-2xl h-full flex flex-col transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-primary-purple">
                 <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold text-light-text dark:text-white">{plan.name}</h3>
                     <span className={`px-3 py-1 text-sm font-semibold rounded-full ${getRiskColor(plan.riskLevel)}`}>{plan.riskLevel} Risk</span>
@@ -213,7 +213,7 @@ const PlanCard: React.FC<{ plan: InvestmentPlan; index: number; onSelectPlan: (p
                     <ul className="space-y-2">
                         {plan.keyFeatures.map((feature, i) => (
                             <li key={i} className="flex items-center text-light-text-secondary dark:text-gray-400">
-                                <svg className="w-5 h-5 mr-2 text-primary-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                <svg className="w-5 h-5 mr-2 text-primary-purple flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                                 <span>{feature}</span>
                             </li>
                         ))}
@@ -233,7 +233,7 @@ const PlanCard: React.FC<{ plan: InvestmentPlan; index: number; onSelectPlan: (p
 
                 <button 
                   onClick={() => onSelectPlan(plan)}
-                  className="w-full mt-auto bg-primary-red text-white font-bold px-6 py-3 rounded-lg text-base hover:bg-red-700 transition duration-300 transform hover:scale-105"
+                  className="w-full mt-auto bg-primary-purple text-white font-bold px-6 py-3 rounded-lg text-base hover:bg-primary-purple-dark transition duration-300 transform hover:scale-105"
                 >
                     Get Started
                 </button>
@@ -278,7 +278,7 @@ const InvestmentPlansPage: React.FC = () => {
               <p className="text-lg text-light-text-secondary dark:text-gray-400 mt-4 max-w-3xl mx-auto">
                 Find the perfect investment strategy tailored to your financial goals, risk tolerance, and timeline. We're here to help you grow your wealth.
               </p>
-              <div className="w-24 h-1 bg-primary-red mx-auto mt-6"></div>
+              <div className="w-24 h-1 bg-primary-purple mx-auto mt-6"></div>
             </div>
           </AnimatedSection>
           

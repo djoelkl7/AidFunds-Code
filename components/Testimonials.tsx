@@ -18,7 +18,7 @@ const TestimonialCard: React.FC<{ quote: string; name: string; title: string; av
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      quote: 'AidFunds has completely changed my perspective on investing. The platform is intuitive, and the returns have been fantastic!',
+      quote: 'Cashlio Finance has completely changed my perspective on investing. The platform is intuitive, and the returns have been fantastic!',
       name: 'Sarah Johnson',
       title: 'Entrepreneur',
       avatar: 'https://picsum.photos/100/100?random=2'
@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
       avatar: 'https://picsum.photos/100/100?random=3'
     },
     {
-      quote: 'As someone new to investing, I was hesitant. But AidFunds made it so easy to get started. I highly recommend it to anyone.',
+      quote: 'As someone new to investing, I was hesitant. But Cashlio Finance made it so easy to get started. I highly recommend it to anyone.',
       name: 'Jessica Williams',
       title: 'Marketing Manager',
       avatar: 'https://picsum.photos/100/100?random=4'
@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">What Our Clients Say</h2>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

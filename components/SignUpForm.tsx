@@ -120,7 +120,7 @@ const SignUpForm: React.FC = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Your Name"
-            className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.name && touched.name ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.name && touched.name ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+            className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.name && touched.name ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.name && touched.name ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
             aria-invalid={!!(errors.name && touched.name)}
             aria-describedby="name-error"
           />
@@ -137,7 +137,7 @@ const SignUpForm: React.FC = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Email Address"
-            className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+            className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
             aria-invalid={!!(errors.email && touched.email)}
             aria-describedby="email-error"
           />
@@ -155,7 +155,7 @@ const SignUpForm: React.FC = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Password"
-              className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.password && touched.password ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.password && touched.password ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+              className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.password && touched.password ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.password && touched.password ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
               aria-invalid={!!(errors.password && touched.password)}
               aria-describedby="password-error"
             />
@@ -177,7 +177,7 @@ const SignUpForm: React.FC = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Confirm Password"
-              className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.confirmPassword && touched.confirmPassword ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.confirmPassword && touched.confirmPassword ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+              className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.confirmPassword && touched.confirmPassword ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 pr-10 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.confirmPassword && touched.confirmPassword ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
               aria-invalid={!!(errors.confirmPassword && touched.confirmPassword)}
               aria-describedby="confirmPassword-error"
             />
@@ -194,7 +194,7 @@ const SignUpForm: React.FC = () => {
         <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary-red text-white font-bold px-8 py-3 rounded-lg text-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-red-500 transition duration-300 transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
+            className="w-full bg-primary-purple text-white font-bold px-8 py-3 rounded-lg text-lg hover:bg-primary-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-purple-dark transition duration-300 transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
         >
             {isSubmitting ? 'Signing Up...' : 'Sign Up Now'}
         </button>

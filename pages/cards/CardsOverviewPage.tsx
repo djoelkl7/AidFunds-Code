@@ -8,7 +8,7 @@ const CardItem: React.FC<{ type: string; number: string; expiry: string; holder:
         {isFrozen && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[1px] z-10">
                 <div className="bg-white/90 text-black px-4 py-2 rounded-full font-bold uppercase text-xs tracking-widest flex items-center shadow-2xl border border-white/20">
-                    <svg className="w-4 h-4 mr-2 text-primary-red" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 mr-2 text-primary-purple" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
                     </svg>
                     Frozen
@@ -16,7 +16,7 @@ const CardItem: React.FC<{ type: string; number: string; expiry: string; holder:
             </div>
         )}
         <div className="flex justify-between items-start">
-            <span className="font-bold text-lg tracking-wider">AidFunds</span>
+            <span className="font-bold text-lg tracking-wider">Cashlio Finance</span>
             <span className="italic font-serif opacity-80">{type}</span>
         </div>
         <div className="my-4">
@@ -46,7 +46,7 @@ const CardsOverviewPage: React.FC = () => {
 
     const cards = [
         { id: '1', type: 'Platinum Debit', number: '**** **** **** 4582', expiry: '12/26', holder: holderName, color: 'bg-gradient-to-br from-gray-800 to-black', isFrozen: false },
-        { id: '2', type: 'Rewards Credit', number: '**** **** **** 9921', expiry: '09/25', holder: holderName, color: 'bg-gradient-to-br from-primary-red to-red-900', isFrozen: true },
+        { id: '2', type: 'Rewards Credit', number: '**** **** **** 9921', expiry: '09/25', holder: holderName, color: 'bg-gradient-to-br from-primary-purple to-primary-purple-dark', isFrozen: true },
     ];
 
     return (
@@ -55,10 +55,10 @@ const CardsOverviewPage: React.FC = () => {
                 <div className="flex justify-between items-center">
                     <h1 className="text-2xl font-bold text-light-text dark:text-white">Your Cards</h1>
                     <div className="space-x-3">
-                         <Link to="/dashboard/cards/virtual" className="inline-block bg-white dark:bg-gray-800 text-primary-red font-semibold py-2 px-4 rounded-lg border border-primary-red hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                         <Link to="/dashboard/cards/virtual" className="inline-block bg-white dark:bg-gray-800 text-primary-purple font-semibold py-2 px-4 rounded-lg border border-primary-purple hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                             Virtual Cards
                         </Link>
-                        <button className="bg-primary-red text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                        <button className="bg-primary-purple text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-purple-dark transition-colors">
                             + Add New Card
                         </button>
                     </div>
@@ -70,7 +70,7 @@ const CardsOverviewPage: React.FC = () => {
                     ))}
                     
                     {/* Add Card Placeholder */}
-                     <button className="rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 h-56 flex flex-col items-center justify-center text-gray-400 hover:text-primary-red hover:border-primary-red transition-all group">
+                     <button className="rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 h-56 flex flex-col items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple transition-all group">
                         <svg className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
                         <span className="font-medium">Order Physical Card</span>
                     </button>

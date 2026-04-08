@@ -50,12 +50,12 @@ const TransactionsPage: React.FC = () => {
                             placeholder="Search descriptions..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-purple focus:outline-none text-sm"
                          />
                          <select 
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-purple focus:outline-none text-sm"
                          >
                              <option value="All">All Categories</option>
                              <option value="Gold Assets">Gold Assets</option>
@@ -66,7 +66,7 @@ const TransactionsPage: React.FC = () => {
                          <select 
                             value={filterStatus}
                             onChange={(e) => setFilterStatus(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-purple focus:outline-none text-sm"
                          >
                              <option value="All">All Statuses</option>
                              <option value="Completed">Completed</option>
@@ -77,14 +77,14 @@ const TransactionsPage: React.FC = () => {
                             type="date" 
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-purple focus:outline-none text-sm"
                             aria-label="Start Date"
                          />
                          <input 
                             type="date" 
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-purple focus:outline-none text-sm"
                             aria-label="End Date"
                          />
                     </div>
@@ -114,13 +114,13 @@ const TransactionsPage: React.FC = () => {
                                     <td className="p-4">
                                         <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase ${
                                             t.status === 'Completed' ? 'text-green-500 bg-green-900/20' : 
-                                            t.status === 'Flagged' ? 'text-red-500 bg-red-900/20 animate-pulse' :
+                                            t.status === 'Flagged' ? 'text-primary-purple bg-primary-purple/20 animate-pulse' :
                                             'text-yellow-500 bg-yellow-900/20'
                                         }`}>
                                             {t.status}
                                         </span>
                                     </td>
-                                    <td className={`p-4 text-right font-bold font-mono ${t.amount > 0 ? 'text-green-500' : t.amount < 0 ? 'text-red-500' : 'text-gray-400'}`}>
+                                    <td className={`p-4 text-right font-bold font-mono ${t.amount > 0 ? 'text-green-500' : t.amount < 0 ? 'text-primary-purple' : 'text-gray-400'}`}>
                                         {t.amount === 0 ? '--' : (t.amount > 0 ? '+' : '') + t.amount.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                                     </td>
                                 </tr>

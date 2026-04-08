@@ -54,7 +54,7 @@ const TransferConfirmationPage: React.FC = () => {
                     </div>
                     <div className="flex justify-between pt-2 items-center">
                         <span className="text-lg font-bold text-light-text dark:text-white">Amount</span>
-                        <span className="text-2xl font-extrabold text-primary-red">${parseFloat(data.amount).toFixed(2)}</span>
+                        <span className="text-2xl font-extrabold text-primary-purple">${parseFloat(data.amount).toFixed(2)}</span>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@ const TransferConfirmationPage: React.FC = () => {
                     <button 
                         onClick={handleConfirm}
                         disabled={isProcessing}
-                        className="w-2/3 bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors flex justify-center items-center"
+                        className="w-2/3 bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors flex justify-center items-center"
                     >
                         {isProcessing ? (
                              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

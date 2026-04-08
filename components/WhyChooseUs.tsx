@@ -6,7 +6,7 @@ import AnimatedSection from './AnimatedSection';
 const FeatureCard: React.FC<{ icon: React.ReactElement; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-light-bg-secondary dark:bg-primary-gray p-6 sm:p-8 rounded-lg text-center transform hover:-translate-y-2 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
     <div className="flex justify-center items-center mb-4">
-      <div className="bg-primary-red p-4 rounded-full">
+      <div className="bg-primary-purple p-4 rounded-full">
         {icon}
       </div>
     </div>
@@ -40,7 +40,7 @@ const WhyChooseUs: React.FC = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">Why Choose Us</h2>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

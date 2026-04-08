@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="bg-white dark:bg-primary-gray rounded-lg shadow-lg overflow-hidden sticky top-24">
-      <div className="p-4 bg-primary-red">
+      <div className="p-4 bg-primary-purple">
         <h2 className="text-white font-bold text-lg">Dashboard</h2>
       </div>
       <nav className="p-2">
@@ -51,7 +51,7 @@ const Sidebar: React.FC = () => {
                 className={({ isActive }) =>
                   `flex items-center px-4 py-3 rounded-md transition-colors duration-200 ${
                     isActive
-                      ? 'bg-light-bg-secondary dark:bg-black/40 text-primary-red font-semibold'
+                      ? 'bg-light-bg-secondary dark:bg-black/40 text-primary-purple font-semibold'
                       : 'text-light-text-secondary dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-light-text dark:hover:text-white'
                   }`
                 }

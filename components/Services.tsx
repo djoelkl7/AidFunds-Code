@@ -4,15 +4,15 @@ import AnimatedSection from './AnimatedSection';
 
 // FIX: Replaced JSX.Element with React.ReactElement to resolve namespace issue.
 const ServiceCard: React.FC<{ icon: React.ReactElement; title: string; description: string; link?: string; }> = ({ icon, title, description, link }) => (
-  <div className="bg-light-bg-secondary dark:bg-primary-gray p-6 sm:p-8 rounded-lg border-l-4 border-primary-red transform hover:-translate-y-2 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+  <div className="bg-light-bg-secondary dark:bg-primary-gray p-6 sm:p-8 rounded-lg border-l-4 border-primary-purple transform hover:-translate-y-2 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
     <div className="flex items-center mb-4">
-      <div className="text-primary-red mr-4">{icon}</div>
+      <div className="text-primary-purple mr-4">{icon}</div>
       <h3 className="text-xl font-bold text-light-text dark:text-white">{title}</h3>
     </div>
     <p className="text-light-text-secondary dark:text-gray-400 flex-grow">{description}</p>
     {link && (
       <div className="mt-6">
-        <Link to={link} className="font-semibold text-primary-red hover:text-red-700 dark:hover:text-red-300 transition-colors duration-200 group">
+        <Link to={link} className="font-semibold text-primary-purple hover:text-primary-purple-dark dark:hover:text-purple-300 transition-colors duration-200 group">
           Learn More <span className="inline-block transform group-hover:translate-x-1 transition-transform">&rarr;</span>
         </Link>
       </div>
@@ -51,7 +51,7 @@ const Services: React.FC = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">Our Services</h2>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

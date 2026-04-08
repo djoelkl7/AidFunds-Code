@@ -25,7 +25,7 @@ const CardSettingsPage: React.FC = () => {
         <AnimatedSection>
             <div className="max-w-3xl mx-auto space-y-6">
                 <div className="flex items-center space-x-4 mb-6">
-                    <button onClick={() => navigate(-1)} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-red">
+                    <button onClick={() => navigate(-1)} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-purple">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     </button>
                     <h1 className="text-2xl font-bold text-light-text dark:text-white">Card Settings</h1>
@@ -60,7 +60,7 @@ const CardSettingsPage: React.FC = () => {
                             step="100" 
                             value={limit} 
                             onChange={(e) => setLimit(parseInt(e.target.value))}
-                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-red"
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-purple"
                         />
                         <div className="flex justify-between text-xs text-gray-500 mt-1">
                             <span>$500</span>
@@ -82,7 +82,7 @@ const CardSettingsPage: React.FC = () => {
                                  <span className="capitalize text-light-text dark:text-white">{key.replace(/([A-Z])/g, ' $1').trim()} Transactions</span>
                                  <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" checked={value} onChange={() => toggleSetting(key as keyof typeof settings)} />
-                                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-red"></div>
+                                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-purple"></div>
                                 </label>
                              </div>
                          ))}

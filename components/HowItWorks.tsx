@@ -5,7 +5,7 @@ import AnimatedSection from './AnimatedSection';
 const Step: React.FC<{ number: string; title: string; description: string }> = ({ number, title, description }) => (
   <div className="flex items-start">
     <div className="flex-shrink-0">
-      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary-red text-white font-bold text-xl">
+      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary-purple text-white font-bold text-xl">
         {number}
       </div>
     </div>
@@ -42,7 +42,7 @@ const HowItWorks: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">How It Works</h2>
             <p className="text-light-text-secondary dark:text-gray-400 mt-2">Start your investment journey in three simple steps.</p>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="max-w-3xl mx-auto">

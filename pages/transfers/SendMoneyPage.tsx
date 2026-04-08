@@ -36,13 +36,13 @@ const SendMoneyPage: React.FC = () => {
                 <div className="flex mb-6 bg-gray-100 dark:bg-black/30 p-1 rounded-lg">
                     <button 
                         onClick={() => setTransferType('internal')}
-                        className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all ${transferType === 'internal' ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-red' : 'text-gray-500'}`}
+                        className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all ${transferType === 'internal' ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-purple' : 'text-gray-500'}`}
                     >
                         Internal Transfer
                     </button>
                     <button 
                         onClick={() => setTransferType('external')}
-                        className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all ${transferType === 'external' ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-red' : 'text-gray-500'}`}
+                        className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all ${transferType === 'external' ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-purple' : 'text-gray-500'}`}
                     >
                         External Bank
                     </button>
@@ -55,7 +55,7 @@ const SendMoneyPage: React.FC = () => {
                             name="fromAccount" 
                             value={formData.fromAccount}
                             onChange={handleChange}
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         >
                             <option>Checking - **** 4582 ($12,450.75)</option>
                             <option>Savings - **** 9921 ($35,000.00)</option>
@@ -70,7 +70,7 @@ const SendMoneyPage: React.FC = () => {
                                 value={formData.toAccount}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                             >
                                 <option value="">Select Account</option>
                                 <option value="Savings - **** 9921">Savings - **** 9921</option>
@@ -84,7 +84,7 @@ const SendMoneyPage: React.FC = () => {
                                 onChange={handleChange}
                                 placeholder="Recipient Name or IBAN"
                                 required
-                                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                             />
                         )}
                     </div>
@@ -100,7 +100,7 @@ const SendMoneyPage: React.FC = () => {
                             min="0.01"
                             step="0.01"
                             required
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         />
                     </div>
 
@@ -112,11 +112,11 @@ const SendMoneyPage: React.FC = () => {
                             value={formData.note}
                             onChange={handleChange}
                             placeholder="e.g., Rent, Gift"
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         />
                     </div>
 
-                    <button type="submit" className="w-full bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+                    <button type="submit" className="w-full bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors">
                         Review Transfer
                     </button>
                 </form>

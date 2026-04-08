@@ -64,7 +64,7 @@ const TradingHistory: React.FC<{ onAction: (trade: Trade) => void }> = ({ onActi
         if (!sortConfig || sortConfig.key !== key) {
             return <span className="ml-1 text-gray-400 opacity-50">↕</span>;
         }
-        return sortConfig.direction === 'asc' ? <span className="ml-1 text-primary-red">↑</span> : <span className="ml-1 text-primary-red">↓</span>;
+        return sortConfig.direction === 'asc' ? <span className="ml-1 text-primary-purple">↑</span> : <span className="ml-1 text-primary-purple">↓</span>;
     };
 
     return (
@@ -81,7 +81,7 @@ const TradingHistory: React.FC<{ onAction: (trade: Trade) => void }> = ({ onActi
                         id="filterType"
                         value={filterType}
                         onChange={(e) => setFilterType(e.target.value as 'All' | 'Buy' | 'Sell')}
-                        className="w-full sm:w-48 bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-2 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-200"
+                        className="w-full sm:w-48 bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-2 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-200"
                    >
                        <option value="All">All Types</option>
                        <option value="Buy">Buy</option>
@@ -96,7 +96,7 @@ const TradingHistory: React.FC<{ onAction: (trade: Trade) => void }> = ({ onActi
                         value={filterAsset}
                         onChange={(e) => setFilterAsset(e.target.value)}
                         placeholder="Search Asset (e.g., AAPL)"
-                        className="w-full sm:w-64 bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-2 pl-8 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-red transition duration-200"
+                        className="w-full sm:w-64 bg-gray-100 dark:bg-primary-dark border border-gray-300 dark:border-gray-600 rounded-md p-2 pl-8 text-light-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple transition duration-200"
                     />
                     <svg className="w-4 h-4 absolute left-2.5 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
@@ -156,7 +156,7 @@ const TradingHistory: React.FC<{ onAction: (trade: Trade) => void }> = ({ onActi
                                     <td className="whitespace-nowrap px-4 py-3 text-center">
                                         <button
                                             onClick={() => onAction(trade)}
-                                            className="px-3 py-1 rounded-md text-white font-semibold bg-primary-red/80 hover:bg-primary-red transition-colors duration-300 text-xs"
+                                            className="px-3 py-1 rounded-md text-white font-semibold bg-primary-purple/80 hover:bg-primary-purple transition-colors duration-300 text-xs"
                                             aria-label={`Repeat trade for ${trade.asset}`}
                                         >
                                             Repeat
@@ -217,7 +217,7 @@ const ConfirmationModal: React.FC<{
           </button>
           <button
             onClick={onConfirm}
-            className="px-6 py-2 rounded-md text-white font-semibold bg-primary-red hover:bg-red-700 transition-colors duration-300 transform hover:scale-105"
+            className="px-6 py-2 rounded-md text-white font-semibold bg-primary-purple hover:bg-primary-purple-dark transition-colors duration-300 transform hover:scale-105"
             aria-label={`Confirm repeating the trade`}
           >
             Confirm
@@ -374,9 +374,9 @@ const ProfilePage: React.FC = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`w-full bg-gray-100 dark:bg-primary-dark border ${
-                      errors.name && touched.name ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'
+                      errors.name && touched.name ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'
                     } rounded-md p-3 text-light-text dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 ${
-                      errors.name && touched.name ? 'focus:ring-red-500' : 'focus:ring-primary-red'
+                      errors.name && touched.name ? 'focus:ring-purple-500' : 'focus:ring-primary-purple'
                     } transition duration-300`}
                     aria-invalid={!!(errors.name && touched.name)}
                     aria-describedby="name-error"
@@ -403,9 +403,9 @@ const ProfilePage: React.FC = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`w-full bg-gray-100 dark:bg-primary-dark border ${
-                      errors.email && touched.email ? 'border-primary-red' : 'border-gray-300 dark:border-gray-600'
+                      errors.email && touched.email ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'
                     } rounded-md p-3 text-light-text dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 ${
-                      errors.email && touched.email ? 'focus:ring-red-500' : 'focus:ring-primary-red'
+                      errors.email && touched.email ? 'focus:ring-purple-500' : 'focus:ring-primary-purple'
                     } transition duration-300`}
                     aria-invalid={!!(errors.email && touched.email)}
                     aria-describedby="email-error"
@@ -422,7 +422,7 @@ const ProfilePage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-red-500 disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-purple hover:bg-primary-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-purple-500 disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
                 >
                   {isSubmitting ? 'Saving...' : 'Save Changes'}
                 </button>

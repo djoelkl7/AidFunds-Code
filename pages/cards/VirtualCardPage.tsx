@@ -18,7 +18,7 @@ const VirtualCardPage: React.FC = () => {
                     <div className="relative group perspective">
                          <div className="relative rounded-xl shadow-2xl overflow-hidden p-6 text-white h-56 flex flex-col justify-between bg-gradient-to-r from-blue-600 to-indigo-700 transform transition-transform duration-500 hover:rotate-1">
                             <div className="flex justify-between items-start">
-                                <span className="font-bold text-lg tracking-wider">AidFunds Virtual</span>
+                                <span className="font-bold text-lg tracking-wider">Cashlio Finance Virtual</span>
                                 <span className="uppercase text-xs font-bold border border-white/30 px-2 py-1 rounded">Single Use</span>
                             </div>
                             <div className="my-4">
@@ -63,7 +63,7 @@ const VirtualCardPage: React.FC = () => {
                         <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                              <h3 className="text-lg font-bold text-light-text dark:text-white mb-2">Create New</h3>
                              <p className="text-sm text-light-text-secondary dark:text-gray-400 mb-4">Generate a new card for a specific merchant or one-time use.</p>
-                             <button className="w-full bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+                             <button className="w-full bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors">
                                  Generate New Card
                              </button>
                         </div>

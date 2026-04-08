@@ -20,7 +20,7 @@ const LoanApprovalsPage: React.FC = () => {
                         <div key={loan.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700">
                             <div className="bg-gray-50 dark:bg-gray-700/50 p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
                                 <h3 className="font-bold text-lg text-gray-900 dark:text-white">Application #{loan.id}</h3>
-                                <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full font-bold">{loan.status}</span>
+                                <span className="text-xs bg-purple-100 text-primary-purple px-2 py-1 rounded-full font-bold">{loan.status}</span>
                             </div>
                             <div className="p-6">
                                 <div className="grid grid-cols-2 gap-4 mb-6">
@@ -30,7 +30,7 @@ const LoanApprovalsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">Amount Requested</p>
-                                        <p className="font-bold text-xl text-primary-red">${loan.amount.toLocaleString()}</p>
+                                        <p className="font-bold text-xl text-primary-purple">${loan.amount.toLocaleString()}</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">Purpose</p>
@@ -53,7 +53,7 @@ const LoanApprovalsPage: React.FC = () => {
                                     <button className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded transition-colors">
                                         Approve Loan
                                     </button>
-                                    <button className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded transition-colors">
+                                    <button className="flex-1 bg-primary-purple hover:bg-primary-purple-dark text-white font-bold py-2 rounded transition-colors">
                                         Reject
                                     </button>
                                     <button className="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-bold py-2 rounded transition-colors">

@@ -30,7 +30,7 @@ const ApplyLoanPage: React.FC = () => {
         <AnimatedSection>
             <div className="max-w-4xl mx-auto">
                 <div className="flex items-center space-x-4 mb-6">
-                    <button onClick={() => navigate(-1)} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-red">
+                    <button onClick={() => navigate(-1)} className="text-light-text-secondary dark:text-gray-400 hover:text-primary-purple">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     </button>
                     <h1 className="text-2xl font-bold text-light-text dark:text-white">Apply for a Loan</h1>
@@ -45,7 +45,7 @@ const ApplyLoanPage: React.FC = () => {
                             <div>
                                 <div className="flex justify-between mb-2">
                                     <label className="text-sm font-medium text-light-text-secondary dark:text-gray-400">Loan Amount</label>
-                                    <span className="font-bold text-primary-red text-lg">${amount.toLocaleString()}</span>
+                                    <span className="font-bold text-primary-purple text-lg">${amount.toLocaleString()}</span>
                                 </div>
                                 <input 
                                     type="range" 
@@ -54,7 +54,7 @@ const ApplyLoanPage: React.FC = () => {
                                     step="500" 
                                     value={amount} 
                                     onChange={(e) => setAmount(parseInt(e.target.value))}
-                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-red"
+                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-purple"
                                 />
                                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                                     <span>$1,000</span>
@@ -65,7 +65,7 @@ const ApplyLoanPage: React.FC = () => {
                             <div>
                                 <div className="flex justify-between mb-2">
                                     <label className="text-sm font-medium text-light-text-secondary dark:text-gray-400">Duration (Months)</label>
-                                    <span className="font-bold text-primary-red text-lg">{months} Months</span>
+                                    <span className="font-bold text-primary-purple text-lg">{months} Months</span>
                                 </div>
                                 <input 
                                     type="range" 
@@ -74,7 +74,7 @@ const ApplyLoanPage: React.FC = () => {
                                     step="6" 
                                     value={months} 
                                     onChange={(e) => setMonths(parseInt(e.target.value))}
-                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-red"
+                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-purple"
                                 />
                                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                                     <span>6 Months</span>
@@ -89,7 +89,7 @@ const ApplyLoanPage: React.FC = () => {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-light-text dark:text-white font-medium">Estimated Monthly Payment</span>
-                                    <span className="text-2xl font-bold text-primary-red">${monthlyPayment.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span className="text-2xl font-bold text-primary-purple">${monthlyPayment.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ const ApplyLoanPage: React.FC = () => {
                                 <select 
                                     value={purpose} 
                                     onChange={(e) => setPurpose(e.target.value)}
-                                    className="w-full bg-gray-100 dark:bg-black/30 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                                    className="w-full bg-gray-100 dark:bg-black/30 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                                 >
                                     <option>Debt Consolidation</option>
                                     <option>Home Improvement</option>
@@ -109,7 +109,7 @@ const ApplyLoanPage: React.FC = () => {
                                     <option>Business</option>
                                 </select>
                             </div>
-                            <button type="submit" className="w-full bg-primary-red text-white font-bold py-4 rounded-lg hover:bg-red-700 transition-colors shadow-lg">
+                            <button type="submit" className="w-full bg-primary-purple text-white font-bold py-4 rounded-lg hover:bg-primary-purple-dark transition-colors shadow-lg">
                                 Submit Application
                             </button>
                         </form>

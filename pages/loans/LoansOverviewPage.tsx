@@ -46,7 +46,7 @@ const LoansOverviewPage: React.FC = () => {
                         <h1 className="text-2xl font-bold text-light-text dark:text-white">Loans & Lending</h1>
                         <p className="text-light-text-secondary dark:text-gray-400">Manage your existing loans or apply for new financing.</p>
                     </div>
-                    <Link to="/dashboard/loans/apply" className="bg-primary-red text-white font-semibold py-3 px-6 rounded-lg hover:bg-red-700 transition-colors shadow-lg transform hover:scale-105">
+                    <Link to="/dashboard/loans/apply" className="bg-primary-purple text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-purple-dark transition-colors shadow-lg transform hover:scale-105">
                         Apply for New Loan
                     </Link>
                 </div>

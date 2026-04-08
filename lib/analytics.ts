@@ -1,6 +1,6 @@
 
 /**
- * Web Analytics Utility for AidFunds
+ * Web Analytics Utility for Cashlio Finance
  * Handles Google Analytics initialization and event tracking
  */
 

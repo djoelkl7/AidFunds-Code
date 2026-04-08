@@ -46,7 +46,7 @@ const ForgotPassword: React.FC = () => {
   return (
     <section className="min-h-screen bg-light-bg dark:bg-primary-dark flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-         <Link to="/" className="inline-block" aria-label="AidFunds homepage">
+         <Link to="/" className="inline-block" aria-label="Cashlio Finance homepage">
           <Logo />
         </Link>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-light-text dark:text-white">
@@ -66,7 +66,7 @@ const ForgotPassword: React.FC = () => {
               <h3 className="text-xl font-bold text-light-text dark:text-white">Check your email</h3>
               <p className="text-light-text-secondary dark:text-gray-300 mt-2">If an account with that email address exists, we've sent you a link to reset your password.</p>
                <div className="mt-6">
-                <Link to="/login" className="font-medium text-red-400 hover:text-red-500">
+                <Link to="/login" className="font-medium text-primary-purple hover:text-primary-purple-dark">
                     &larr; Back to Sign In
                 </Link>
               </div>
@@ -84,7 +84,7 @@ const ForgotPassword: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Email Address"
-                  className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-red' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-red-500' : 'focus:ring-primary-red'} transition duration-300`}
+                  className={`w-full bg-gray-100 dark:bg-primary-dark border ${errors.email && touched.email ? 'border-primary-purple' : 'border-gray-300 dark:border-primary-gray'} rounded-md p-3 text-light-text dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 ${errors.email && touched.email ? 'focus:ring-primary-purple-dark' : 'focus:ring-primary-purple'} transition duration-300`}
                   aria-invalid={!!(errors.email && touched.email)}
                   aria-describedby="email-error"
                   required
@@ -96,7 +96,7 @@ const ForgotPassword: React.FC = () => {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-red-500 disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
+                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-purple hover:bg-primary-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-bg-secondary dark:focus:ring-offset-primary-gray focus:ring-primary-purple-dark disabled:bg-gray-500 disabled:cursor-not-allowed transition duration-300 transform hover:scale-105"
                 >
                     {isSubmitting ? 'Sending...' : 'Send Reset Link'}
                 </button>

@@ -22,7 +22,7 @@ const UserAvatar: React.FC<{ name: string; avatar?: string; onToggle: () => void
     {avatar ? (
         <img src={avatar} alt={name} className="w-full h-full object-cover" />
     ) : (
-        <span className="w-full h-full flex items-center justify-center bg-primary-red">
+        <span className="w-full h-full flex items-center justify-center bg-primary-purple">
             {name.charAt(0).toUpperCase()}
         </span>
     )}
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-white/80 dark:bg-black/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200 dark:border-primary-gray">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl" aria-label="AidFunds homepage">
+        <Link to="/" className="text-2xl" aria-label="Cashlio Finance homepage">
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
           
           {isLoading ? (
             <div className="flex items-center justify-center w-24 h-10">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-red"></div>
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-purple"></div>
             </div>
           ) : user ? (
             <div className="relative" ref={profileRef}>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                <Link to="/login" className="text-light-text-secondary dark:text-gray-300 hover:text-light-text dark:hover:text-white transition duration-300 font-medium hidden lg:block">
                   Login
                 </Link>
-                <Link to="/signup" className="bg-primary-red text-white font-semibold px-5 py-2 rounded-md hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                <Link to="/signup" className="bg-primary-purple text-white font-semibold px-5 py-2 rounded-md hover:bg-primary-purple-dark transition-all duration-300 transform hover:scale-105">
                   Sign Up
                 </Link>
             </div>
@@ -137,7 +137,7 @@ const Header: React.FC = () => {
             
             {isLoading ? (
                <div className="w-full flex justify-center py-4">
-                   <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-red"></div>
+                   <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-purple"></div>
                </div>
             ) : user ? (
                <div className="w-full text-center border-t border-gray-200 dark:border-gray-700 pt-4 mt-2 space-y-4">
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                  <Link to="/profile" onClick={() => setIsMenuOpen(false)} className="block text-light-text-secondary dark:text-gray-300 hover:text-light-text dark:hover:text-white transition duration-300">
                     Settings
                 </Link>
-                 <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="w-full text-center bg-primary-red text-white font-semibold px-5 py-2 rounded-md hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                 <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="w-full text-center bg-primary-purple text-white font-semibold px-5 py-2 rounded-md hover:bg-primary-purple-dark transition-all duration-300 transform hover:scale-105">
                     Sign Out
                 </button>
               </div>
@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                 <Link to="/login" onClick={() => setIsMenuOpen(false)} className="w-full text-center text-light-text-secondary dark:text-gray-300 hover:text-light-text dark:hover:text-white font-medium">
                   Login
                 </Link>
-                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="w-full text-center bg-primary-red text-white font-semibold px-5 py-2 rounded-md hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="w-full text-center bg-primary-purple text-white font-semibold px-5 py-2 rounded-md hover:bg-primary-purple-dark transition-all duration-300 transform hover:scale-105">
                   Sign Up
                 </Link>
               </div>

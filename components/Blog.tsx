@@ -63,12 +63,12 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => (
         </a>
         <div className="p-6 flex flex-col flex-grow">
             <div className="mb-4">
-                <span className="inline-block bg-primary-red/10 dark:bg-primary-red/20 text-primary-red text-xs font-semibold rounded-full px-3 py-1">
+                <span className="inline-block bg-primary-purple/10 dark:bg-primary-purple/20 text-primary-purple text-xs font-semibold rounded-full px-3 py-1">
                     {post.category}
                 </span>
             </div>
             <h3 className="text-xl font-bold mb-2 text-light-text dark:text-white leading-snug">
-                <a href={post.slug} className="hover:text-primary-red transition-colors duration-200">{post.title}</a>
+                <a href={post.slug} className="hover:text-primary-purple transition-colors duration-200">{post.title}</a>
             </h3>
             <p className="text-light-text-secondary dark:text-gray-400 text-sm flex-grow mb-6">{post.summary}</p>
             <div className="flex items-center mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
@@ -90,7 +90,7 @@ const Blog: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">From Our Blog</h2>
             <p className="text-light-text-secondary dark:text-gray-400 mt-2">Stay updated with the latest news and insights from the financial world.</p>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

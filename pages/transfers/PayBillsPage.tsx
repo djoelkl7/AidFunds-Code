@@ -39,7 +39,7 @@ const PayBillsPage: React.FC = () => {
                             value={formData.payee}
                             onChange={handleChange}
                             required
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         >
                             <option value="">Select a Biller</option>
                             <option value="Electric Company">Electric Company</option>
@@ -55,7 +55,7 @@ const PayBillsPage: React.FC = () => {
                             name="fromAccount" 
                             value={formData.fromAccount}
                             onChange={handleChange}
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         >
                             <option>Checking - **** 4582 ($12,450.75)</option>
                             <option>Savings - **** 9921 ($35,000.00)</option>
@@ -73,7 +73,7 @@ const PayBillsPage: React.FC = () => {
                             min="0.01"
                             step="0.01"
                             required
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         />
                     </div>
 
@@ -86,11 +86,11 @@ const PayBillsPage: React.FC = () => {
                             onChange={handleChange}
                             placeholder="Biller Account Number"
                             required
-                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-gray-600 rounded-md p-3 text-light-text dark:text-white focus:ring-2 focus:ring-primary-purple focus:outline-none"
                         />
                     </div>
 
-                    <button type="submit" className="w-full bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+                    <button type="submit" className="w-full bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors">
                         Review Payment
                     </button>
                 </form>

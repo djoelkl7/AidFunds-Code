@@ -37,7 +37,7 @@ const ReceiptPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-3">
-                    <Link to="/dashboard" className="block w-full bg-primary-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+                    <Link to="/dashboard" className="block w-full bg-primary-purple text-white font-bold py-3 rounded-lg hover:bg-primary-purple-dark transition-colors">
                         Go to Dashboard
                     </Link>
                     <Link to="/transfers/send" className="block w-full bg-transparent text-light-text-secondary dark:text-gray-400 font-semibold py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">

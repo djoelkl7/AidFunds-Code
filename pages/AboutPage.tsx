@@ -36,10 +36,10 @@ const OurStory: React.FC = () => (
         </div>
         <div className="md:w-1/2 text-center md:text-left">
           <AnimatedSection delay={150}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-light-text dark:text-white">The Genesis of AidFunds</h2>
-            <div className="w-24 h-1 bg-primary-red mb-6 mx-auto md:mx-0"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-light-text dark:text-white">The Genesis of Cashlio Finance</h2>
+            <div className="w-24 h-1 bg-primary-purple mb-6 mx-auto md:mx-0"></div>
             <p className="text-light-text-secondary dark:text-gray-300 mb-4 leading-relaxed">
-              AidFunds was born from a simple observation: the world of finance was often seen as complex, exclusive, and intimidating. We saw a gap between the powerful investment tools available to institutions and the resources accessible to everyday individuals.
+              Cashlio Finance was born from a simple observation: the world of finance was often seen as complex, exclusive, and intimidating. We saw a gap between the powerful investment tools available to institutions and the resources accessible to everyday individuals.
             </p>
             <p className="text-light-text-secondary dark:text-gray-300 leading-relaxed">
               Driven by a passion for technology and a belief in financial equality, we set out to create a platform that is not only powerful but also intuitive and transparent. Our goal is to empower you with the confidence and tools needed to take control of your financial destiny.
@@ -54,7 +54,7 @@ const OurStory: React.FC = () => (
 const ValueCard: React.FC<{ icon: React.ReactElement, title: string, description: string }> = ({ icon, title, description }) => (
   <div className="text-center p-6">
     <div className="flex justify-center items-center mb-4">
-      <div className="text-primary-red">{icon}</div>
+      <div className="text-primary-purple">{icon}</div>
     </div>
     <h3 className="text-xl font-bold mb-2 text-light-text dark:text-white">{title}</h3>
     <p className="text-light-text-secondary dark:text-gray-400">{description}</p>
@@ -86,7 +86,7 @@ const OurValues: React.FC = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">The Core Principles That Guide Us</h2>
-            <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -103,9 +103,9 @@ const OurValues: React.FC = () => {
 
 const TeamMemberCard: React.FC<{ member: { avatar: string; name: string; title: string; bio: string; } }> = ({ member }) => (
     <div className="bg-light-bg-secondary dark:bg-primary-gray rounded-lg shadow-lg hover:shadow-xl h-full flex flex-col text-center p-8 transform hover:-translate-y-2 transition-all duration-300">
-        <img className="w-24 h-24 rounded-full mx-auto mb-4 object-cover ring-4 ring-primary-red/50" src={member.avatar} alt={member.name} />
+        <img className="w-24 h-24 rounded-full mx-auto mb-4 object-cover ring-4 ring-primary-purple/50" src={member.avatar} alt={member.name} />
         <h4 className="font-bold text-xl text-light-text dark:text-white">{member.name}</h4>
-        <p className="text-sm text-primary-red mb-4">{member.title}</p>
+        <p className="text-sm text-primary-purple mb-4">{member.title}</p>
         <p className="text-light-text-secondary dark:text-gray-400 text-sm flex-grow">"{member.bio}"</p>
     </div>
 );
@@ -122,8 +122,8 @@ const MeetTheTeam: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6">
                 <AnimatedSection>
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">The Minds Behind AidFunds</h2>
-                        <div className="w-24 h-1 bg-primary-red mx-auto mt-4"></div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white">The Minds Behind Cashlio Finance</h2>
+                        <div className="w-24 h-1 bg-primary-purple mx-auto mt-4"></div>
                     </div>
                 </AnimatedSection>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -139,7 +139,7 @@ const MeetTheTeam: React.FC = () => {
 }
 
 const JoinUsCTA: React.FC = () => (
-    <section className="py-12 md:py-20 bg-primary-red text-white">
+    <section className="py-12 md:py-20 bg-primary-purple text-white">
         <div className="container mx-auto px-4 sm:px-6 text-center">
             <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -150,7 +150,7 @@ const JoinUsCTA: React.FC = () => (
                 </p>
                 <Link 
                     to="/investment-plans" 
-                    className="bg-white text-primary-red font-bold px-8 py-4 rounded-lg text-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-red focus:ring-white transition duration-300 transform hover:scale-105"
+                    className="bg-white text-primary-purple font-bold px-8 py-4 rounded-lg text-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-purple focus:ring-white transition duration-300 transform hover:scale-105"
                 >
                     Explore Our Services
                 </Link>
