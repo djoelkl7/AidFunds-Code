@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -16,6 +16,7 @@ import ContactPage from './pages/ContactPage';
 import SignUpPage from './pages/SignUpPage';
 import PageTransition from './components/PageTransition';
 import ScrollToTop from './components/ScrollToTop';
+import { initGA, trackPageView } from './lib/analytics';
 
 // Dashboard Components
 import DashboardLayout from './components/DashboardLayout';
@@ -49,6 +50,16 @@ import TransactionMonitorPage from './pages/admin/TransactionMonitorPage';
 import LoanApprovalsPage from './pages/admin/LoanApprovalsPage';
 
 const App: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
   return (
     <ThemeProvider>
       <UserProvider>

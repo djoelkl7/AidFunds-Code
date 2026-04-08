@@ -3,8 +3,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import AnimatedSection from './AnimatedSection';
+import { trackEvent } from '../lib/analytics';
 
 const Footer: React.FC = () => {
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackEvent('newsletter_signup', 'engagement', 'footer_form');
+    alert('Thank you for subscribing!');
+  };
+
   return (
     <footer className="bg-light-bg-secondary dark:bg-black text-light-text-secondary dark:text-gray-400 py-10 md:py-12">
       <div className="container mx-auto px-4 sm:px-6">
@@ -69,9 +76,31 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Follow Us */}
+          {/* Column 4: Stay Updated & Follow Us */}
           <div className="h-full">
             <AnimatedSection delay={600}>
+              <h4 className="font-semibold text-light-text dark:text-white mb-4">Stay Updated</h4>
+            </AnimatedSection>
+            <div className="mb-6 text-center sm:text-left">
+              <AnimatedSection delay={650}>
+                <p className="text-sm mb-4">Subscribe to our newsletter for the latest financial insights.</p>
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col space-y-2">
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    required 
+                    className="bg-white dark:bg-primary-gray border border-gray-300 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-red transition-all"
+                  />
+                  <button 
+                    type="submit" 
+                    className="bg-primary-red text-white text-sm font-bold py-2 rounded-md hover:bg-red-700 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </AnimatedSection>
+            </div>
+            <AnimatedSection delay={700}>
               <h4 className="font-semibold text-light-text dark:text-white mb-4">Follow Us</h4>
             </AnimatedSection>
             <div className="flex space-x-4 justify-center sm:justify-start">

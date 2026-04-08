@@ -3,6 +3,7 @@ import { useForm } from '../hooks/useForm';
 import Logo from './Logo';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
+import { trackEvent } from '../lib/analytics';
 
 const EyeIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -19,6 +20,7 @@ const EyeOffIcon: React.FC = () => (
 
 const Login: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [loginError, setLoginError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useUser();
@@ -58,28 +60,39 @@ const Login: React.FC = () => {
     initialValues,
     validate,
     onSubmit: (formValues) => {
+      setLoginError('');
+      trackEvent('login_attempt', 'auth', 'email_password');
       // Simulate API call for login
       setTimeout(() => {
-        // In a real app, you'd get user data from the API response
-        // For this demo, we'll use a placeholder name
-        login({ email: formValues.email, name: 'Sarah Johnson' });
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        // Redirect after a short delay to show success message
-        setTimeout(() => {
-          navigate('/');
-        }, 1500);
+        // Mock validation: only allow sarah@aidfunds.online with any password for demo
+        // or any email with 'password123'
+        if (formValues.email === 'sarah@aidfunds.online' || formValues.password === 'password123') {
+          trackEvent('login_success', 'auth', 'email_password');
+          login({ email: formValues.email, name: 'Sarah Johnson' });
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
+          // Redirect after a short delay to show success message
+          setTimeout(() => {
+            navigate('/');
+          }, 1500);
+        } else {
+          trackEvent('login_failure', 'auth', 'email_password');
+          setIsSubmitting(false);
+          setLoginError('Invalid email or password. Please check your credentials or sign up if you don\'t have an account.');
+        }
       }, 1500);
     },
   });
 
   const handleGoogleLogin = () => {
+    trackEvent('login_attempt', 'auth', 'google');
     // In a real app, this would trigger the OAuth flow
     console.log('Attempting Google login...');
     alert('OAuth flow for Google would start here. This is a demo implementation.');
   };
 
   const handleFacebookLogin = () => {
+    trackEvent('login_attempt', 'auth', 'facebook');
     // In a real app, this would trigger the OAuth flow
     console.log('Attempting Facebook login...');
     alert('OAuth flow for Facebook would start here. This is a demo implementation.');
@@ -113,6 +126,11 @@ const Login: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
+              {loginError && (
+                <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded relative text-sm" role="alert">
+                  <span className="block sm:inline">{loginError}</span>
+                </div>
+              )}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium sr-only">Email Address</label>
                 <input

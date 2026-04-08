@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useForm } from '../hooks/useForm';
+import { trackEvent } from '../lib/analytics';
 
 const ContactHero: React.FC = () => (
   <section 
@@ -69,6 +70,7 @@ const ContactForm: React.FC = () => {
             return errors;
         },
         onSubmit: (values) => {
+            trackEvent('contact_form_submit', 'engagement', values.subject);
             // Simulate API call
             setTimeout(() => {
                 console.log('Contact form submitted:', values);

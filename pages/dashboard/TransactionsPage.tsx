@@ -21,32 +21,41 @@ const mockTransactions: Transaction[] = [
 const TransactionsPage: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filterCategory, setFilterCategory] = useState('All');
+    const [filterStatus, setFilterStatus] = useState('All');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
 
     const filteredTransactions = useMemo(() => {
         return mockTransactions.filter(t => {
             const matchesSearch = t.description.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesCategory = filterCategory === 'All' || t.category === filterCategory;
-            return matchesSearch && matchesCategory;
+            const matchesStatus = filterStatus === 'All' || t.status === filterStatus;
+            
+            const transactionDate = new Date(t.date);
+            const matchesStartDate = !startDate || transactionDate >= new Date(startDate);
+            const matchesEndDate = !endDate || transactionDate <= new Date(endDate);
+
+            return matchesSearch && matchesCategory && matchesStatus && matchesStartDate && matchesEndDate;
         });
-    }, [searchTerm, filterCategory]);
+    }, [searchTerm, filterCategory, filterStatus, startDate, endDate]);
 
     return (
         <AnimatedSection>
             <div className="bg-primary-gray rounded-lg shadow-xl p-6 border border-gray-800">
-                <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
                     <h1 className="text-2xl font-bold text-white">Audit & Transaction Log</h1>
-                    <div className="flex gap-4 w-full md:w-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4 w-full lg:w-auto">
                          <input 
                             type="text" 
                             placeholder="Search descriptions..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full md:w-64 bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
                          />
                          <select 
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
-                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none"
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
                          >
                              <option value="All">All Categories</option>
                              <option value="Gold Assets">Gold Assets</option>
@@ -54,6 +63,30 @@ const TransactionsPage: React.FC = () => {
                              <option value="Banking">Banking</option>
                              <option value="Compliance">Compliance</option>
                          </select>
+                         <select 
+                            value={filterStatus}
+                            onChange={(e) => setFilterStatus(e.target.value)}
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                         >
+                             <option value="All">All Statuses</option>
+                             <option value="Completed">Completed</option>
+                             <option value="Pending">Pending</option>
+                             <option value="Flagged">Flagged</option>
+                         </select>
+                         <input 
+                            type="date" 
+                            value={startDate}
+                            onChange={(e) => setStartDate(e.target.value)}
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            aria-label="Start Date"
+                         />
+                         <input 
+                            type="date" 
+                            value={endDate}
+                            onChange={(e) => setEndDate(e.target.value)}
+                            className="bg-black/40 border border-gray-800 rounded-md p-2 text-white focus:ring-2 focus:ring-primary-red focus:outline-none text-sm"
+                            aria-label="End Date"
+                         />
                     </div>
                 </div>
 

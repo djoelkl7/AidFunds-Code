@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
+import { trackEvent } from '../lib/analytics';
 
 const EyeIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,9 +81,11 @@ const SignUpForm: React.FC = () => {
     initialValues,
     validate,
     onSubmit: (formValues) => {
+      trackEvent('signup_attempt', 'auth', 'email_password');
       // Simulate API call
       setTimeout(() => {
         console.log('Signed up with:', formValues);
+        trackEvent('signup_success', 'auth', 'email_password');
         login({ name: formValues.name, email: formValues.email });
         setIsSubmitting(false);
         setSubmitSuccess(true);
