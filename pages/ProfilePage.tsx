@@ -249,9 +249,11 @@ const ProfilePage: React.FC = () => {
     initialValues: {
       name: user?.name || '',
       email: user?.email || '',
+      dailyLimit: user?.dailyLimit || 1000,
+      monthlyLimit: user?.monthlyLimit || 10000,
     },
     validate: (values) => {
-      const errors: { name?: string; email?: string } = {};
+      const errors: { name?: string; email?: string; dailyLimit?: string; monthlyLimit?: string } = {};
       
       // Name validation
       if (!values.name.trim()) {
@@ -266,12 +268,25 @@ const ProfilePage: React.FC = () => {
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
         errors.email = 'Please enter a valid email address.';
       }
+
+      // Deposit Limit validation
+      if (values.dailyLimit <= 0) {
+        errors.dailyLimit = 'Daily limit must be a positive number.';
+      }
+      if (values.monthlyLimit <= 0) {
+        errors.monthlyLimit = 'Monthly limit must be a positive number.';
+      }
       
       return errors;
     },
     onSubmit: (formValues) => {
       setTimeout(() => {
-        updateUser({ name: formValues.name, email: formValues.email });
+        updateUser({ 
+          name: formValues.name, 
+          email: formValues.email,
+          dailyLimit: Number(formValues.dailyLimit),
+          monthlyLimit: Number(formValues.monthlyLimit)
+        });
         setIsSubmitting(false);
         setUpdateSuccess(true);
         setTimeout(() => setUpdateSuccess(false), 3000); // Hide message after 3 seconds
@@ -415,6 +430,60 @@ const ProfilePage: React.FC = () => {
                       {errors.email}
                     </p>
                   )}
+                </div>
+              </div>
+
+              {/* Deposit Limits */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="dailyLimit" className="block text-sm font-medium text-light-text-secondary dark:text-gray-400">
+                    Daily Deposit Limit ($)
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      type="number"
+                      id="dailyLimit"
+                      name="dailyLimit"
+                      value={values.dailyLimit}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={`w-full bg-gray-100 dark:bg-primary-dark border ${
+                        errors.dailyLimit && touched.dailyLimit ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'
+                      } rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 ${
+                        errors.dailyLimit && touched.dailyLimit ? 'focus:ring-purple-500' : 'focus:ring-primary-purple'
+                      } transition duration-300`}
+                    />
+                    {errors.dailyLimit && touched.dailyLimit && (
+                      <p className="mt-2 text-sm text-red-400" role="alert">
+                        {errors.dailyLimit}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="monthlyLimit" className="block text-sm font-medium text-light-text-secondary dark:text-gray-400">
+                    Monthly Deposit Limit ($)
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      type="number"
+                      id="monthlyLimit"
+                      name="monthlyLimit"
+                      value={values.monthlyLimit}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={`w-full bg-gray-100 dark:bg-primary-dark border ${
+                        errors.monthlyLimit && touched.monthlyLimit ? 'border-primary-purple' : 'border-gray-300 dark:border-gray-600'
+                      } rounded-md p-3 text-light-text dark:text-white focus:outline-none focus:ring-2 ${
+                        errors.monthlyLimit && touched.monthlyLimit ? 'focus:ring-purple-500' : 'focus:ring-primary-purple'
+                      } transition duration-300`}
+                    />
+                    {errors.monthlyLimit && touched.monthlyLimit && (
+                      <p className="mt-2 text-sm text-red-400" role="alert">
+                        {errors.monthlyLimit}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
 

@@ -3,7 +3,7 @@ import { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
 // T will be the type for form values, e.g., { name: string; email: string; }
 interface UseFormOptions<T> {
   initialValues: T;
-  validate: (values: T) => Partial<T>;
+  validate: (values: T) => Partial<Record<keyof T, string>>;
   onSubmit: (values: T) => void;
 }
 
@@ -13,7 +13,7 @@ export const useForm = <T extends Record<string, any>>({
   onSubmit,
 }: UseFormOptions<T>) => {
   const [values, setValues] = useState<T>(initialValues);
-  const [errors, setErrors] = useState<Partial<T>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
   const [touched, setTouched] = useState<Partial<Record<keyof T, boolean>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 

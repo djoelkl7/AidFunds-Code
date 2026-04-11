@@ -5,6 +5,8 @@ interface User {
   email: string;
   avatar?: string;
   isLocked?: boolean;
+  dailyLimit?: number;
+  monthlyLimit?: number;
 }
 
 interface UserContextType {
